@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's park</title>
+  </head>
+  <body>
+    <h1>주차장 목록</h1>
+    {% for park in park_list %}
+    <ul>
+      <li>
+        <a href="{{park.pk}}"> {{park.park_name}} </a>
+        <p>{{park.location}}</p>
+      </li>
+    </ul>
+    {% endfor %}
+    <a href="/booking">메인으로 돌아가기</a>
+  </body>
+</html>
