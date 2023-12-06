@@ -13,7 +13,15 @@
     <p>{{park_detail.phone_number}}</p>
     <p>빈자리 현황: {{park_detail.seat_count}}자리</p>
     <a href="/booking/park/">목록</a>
-    <button>예약하기</button>
-    <script></script>
+    <form method="POST">
+      {% csrf_token %}
+      <button onclick="booking()">예약하기</button>
+    </form>
+
+    <script>
+      function booking() {
+        alert("예약되었습니다");
+      }
+    </script>
   </body>
 </html>
