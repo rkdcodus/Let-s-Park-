@@ -12,11 +12,11 @@
       <ul>
         <li class="logo"><a href="/"> Let's Park</a></li>
         {% if user.is_authenticated %}
+        <li class="logined">{{ user.user_id }}님, 안녕하세요</li>
+        <li class="logout"><a href="/">logout</a></li>
+        {% else %}
         <li class="login"><a href="/accounts/login">login</a></li>
         <li class="sign_up"><a href="/accounts/signup">sign up</a></li>
-        {% else %}
-        <li class="logined">{{ user.user_id }}님, 안녕하세요</li>
-        <li class="logout">logout</li>
         {% endif %}
       </ul>
     </div>
