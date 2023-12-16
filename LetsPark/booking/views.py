@@ -14,6 +14,6 @@ def booking(request, pk):
     if request.method == 'POST':
         park_detail.seat_count -= 1
         park_detail.save()
-        return  HttpResponseRedirect('/booking/park')
+        return  HttpResponseRedirect('/park')
     else:
         return render(request, 'booking.html', {'park_detail':park_detail})

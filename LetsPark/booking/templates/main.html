@@ -1,12 +1,23 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/main.css" />
     <title>Let's park</title>
   </head>
   <body>
-    <h1>Let's Park</h1>
-    <p><a href="park/">주차장 목록 조회하기</a></p>
+    <div class="nav">
+      <ul>
+        <li class="logo"><a href="/"> Let's Park</a></li>
+        <li class="login">login</li>
+        <li class="sign_up">sign up</li>
+      </ul>
+    </div>
+    <div class="content">
+      <div><a href="park/">search Parking area! 👇</a></div>
+      <div>check my booking! 👀</div>
+    </div>
   </body>
 </html>

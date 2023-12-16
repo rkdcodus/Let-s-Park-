@@ -1,23 +1,35 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/booking.css" />
     <title>Let's park</title>
   </head>
   <body>
-    <h1>{{park_detail.park_name}}</h1>
-    <p>{{park_detail.location}}</p>
-    <p>{{park_detail.operating_time}}</p>
-    <p>{{park_detail.fee}}</p>
-    <p>{{park_detail.phone_number}}</p>
-    <p>빈자리 현황: {{park_detail.seat_count}}자리</p>
-    <a href="/booking/park/">목록</a>
-    <form method="POST">
-      {% csrf_token %}
-      <button onclick="booking()">예약하기</button>
-    </form>
+    <div class="nav">
+      <ul>
+        <li class="logo"><a href="/"> Let's Park</a></li>
+        <li class="login">login</li>
+        <li class="sign_up">sign up</li>
+      </ul>
+    </div>
 
+    <div class="content">
+      <h1>{{park_detail.park_name}}</h1>
+      <p>장소: {{park_detail.location}}</p>
+      <p>운영 시간: {{park_detail.operating_time}}</p>
+      <p>요금: {{park_detail.fee}}</p>
+      <p>전화번호: {{park_detail.phone_number}}</p>
+      <p>빈자리 현황: {{park_detail.seat_count}}자리</p>
+      <a href="/park/">list 돌아가기</a>
+
+      <form method="POST">
+        {% csrf_token %}
+        <button onclick="booking()">예약하기</button>
+      </form>
+    </div>
     <script>
       function booking() {
         alert("예약되었습니다");
