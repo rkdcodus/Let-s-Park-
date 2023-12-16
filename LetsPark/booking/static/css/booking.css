@@ -39,5 +39,29 @@ li {
 .content {
   width: 500px;
   margin: auto;
+}
+
+.back {
   margin-top: 100px;
+  margin-left: 300px;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.booking {
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 100px;
+  height: 50px;
+  background-color: #c9e3fc;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking:hover {
+  background-color: #b3d8fa;
 }

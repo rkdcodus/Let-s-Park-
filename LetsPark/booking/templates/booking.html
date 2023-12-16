@@ -16,6 +16,10 @@
       </ul>
     </div>
 
+    <div class="back">
+      <a href="/park/"><img src="https://static.thenounproject.com/png/1808051-200.png" /></a>
+    </div>
+
     <div class="content">
       <h1>{{park_detail.park_name}}</h1>
       <p>장소: {{park_detail.location}}</p>
@@ -23,11 +27,10 @@
       <p>요금: {{park_detail.fee}}</p>
       <p>전화번호: {{park_detail.phone_number}}</p>
       <p>빈자리 현황: {{park_detail.seat_count}}자리</p>
-      <a href="/park/">list 돌아가기</a>
 
       <form method="POST">
         {% csrf_token %}
-        <button onclick="booking()">예약하기</button>
+        <button class="booking" onclick="booking()">예약🔥</button>
       </form>
     </div>
     <script>
