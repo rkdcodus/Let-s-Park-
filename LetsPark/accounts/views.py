@@ -23,21 +23,7 @@ def signup(request):
             
             return redirect('/')
     return render(request, 'signup.html')
-
-# def activate(request, uidb64, token):
-#     try:
-#         uid = force_str(urlsafe_b64decode(uidb64))
-#         user = User.objects.get(pk=uid)
-#     except(TypeError, ValueError, OverflowError, User.DoesNotExsit):
-#         user = None
-#     if user is not None and account_activation_token.check_token(user, token):
-#         user.is_active = True
-#         user.save()
-#         auth.login(request, user)
-#         return redirect('/aaa')
-#     else:
-#         return render(request, 'login.html', {'error' : '계정 활성화 오류'})
-
+    
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username', None)
@@ -45,7 +31,7 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return render(request, 'accounts_home.html')
+            return redirect('/')
         else:
             return render(request, 'login.html', {'error': 'username or password is incorrect.'})
     else:
