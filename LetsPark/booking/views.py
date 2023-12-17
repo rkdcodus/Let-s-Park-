@@ -17,3 +17,6 @@ def booking(request, pk):
         return  HttpResponseRedirect('/park')
     else:
         return render(request, 'booking.html', {'park_detail':park_detail})
+    
+def mybooking(request):
+    return render(request, "mybooking.html")
