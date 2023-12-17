@@ -8,6 +8,7 @@ class Park(models.Model):
     fee = models.TextField()
     phone_number = models.CharField(max_length=15)
     seat_count = models.IntegerField()
+    can_booked = models.BooleanField(default=True)
 
     def __str__(self):
         return self.park_name

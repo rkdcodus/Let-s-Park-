@@ -14,8 +14,10 @@ def park(request):
 def booking(request, pk):
     park_detail = get_object_or_404(Park,pk=pk)
     if request.method == 'POST':        
-        if request.user.is_booked == False:
+        if request.user.is_booked == False and park_detail.can_booked:
             park_detail.seat_count -= 1
+            if park_detail.seat_count == 0:
+                park_detail.can_booked = False
             request.user.is_booked = True
             request.user.park = park_detail
             request.user.save()
