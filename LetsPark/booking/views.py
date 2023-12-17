@@ -17,6 +17,7 @@ def booking(request, pk):
         if request.user.is_booked == False:
             park_detail.seat_count -= 1
             request.user.is_booked = True
+            request.user.park = park_detail
             request.user.save()
             park_detail.save()
         else: 
