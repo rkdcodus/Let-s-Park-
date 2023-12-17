@@ -30,16 +30,14 @@
       <p>전화번호: {{park_detail.phone_number}}</p>
       <form method="POST">
         {% csrf_token %}
-        <button class="canclebooking" onclick="canclebooking()">
-          예약취소
-        </button>
+        <button class="canclebooking" onclick="canclebooking()">예약취소</button>
       </form>
 
       {% else %}
       <p id="text">텅</p>
       <h3>예약한 주차장이 없습니다.</h3>
       <h3>
-        <a href="mybooking/" style="color: #1c2ca3d8">예약하러가기🔥</a>
+        <a href="/gotopark" style="color: #1c2ca3d8">예약하러가기🔥</a>
       </h3>
       {% endif %}
     </div>

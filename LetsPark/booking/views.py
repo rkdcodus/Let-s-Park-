@@ -30,4 +30,21 @@ def booking(request, pk):
         return render(request, 'booking.html', {'park_detail':park_detail})
     
 def mybooking(request):
-    return render(request, "mybooking.html")
+    user = request.user
+    user_park = request.user.park
+    if user_park is not None:
+        park_detail = get_object_or_404(Park,pk=user_park.pk)
+        if request.method == 'POST':
+            if user.is_booked == True:
+                user.is_booked = False
+                park_detail.seat_count += 1
+                if park_detail.seat_count > 0:
+                    park_detail.can_booked = True
+                user.park = None
+                user.save()
+                park_detail.save()
+
+    return render(request, "mybooking.html", {'park_detail': user_park})
+
+def gotopark(request):
+    return HttpResponseRedirect("/park")
