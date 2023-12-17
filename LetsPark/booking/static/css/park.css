@@ -36,6 +36,14 @@ li {
   margin-right: 20px;
 }
 
+.check {
+  margin-left: 10px;
+}
+
+.logout {
+  margin-left: 10px;
+}
+
 .content {
   width: 500px;
   margin: auto;

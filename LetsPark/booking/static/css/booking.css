@@ -36,6 +36,10 @@ li {
   margin-right: 20px;
 }
 
+.logout {
+  margin-left: 10%;
+}
+
 .content {
   width: 500px;
   margin: auto;

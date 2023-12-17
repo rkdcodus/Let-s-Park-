@@ -4,7 +4,6 @@ body {
 }
 
 a {
-  color: black;
   text-decoration: none;
 }
 
@@ -34,6 +33,10 @@ li {
 
 .login {
   margin-right: 20px;
+}
+
+.check {
+  margin-right: 10px;
 }
 
 .content {

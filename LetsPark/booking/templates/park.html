@@ -11,8 +11,15 @@
     <div class="nav">
       <ul>
         <li class="logo"><a href="/"> Let's Park</a></li>
-        <li class="login">login</li>
-        <li class="sign_up">sign up</li>
+        {% if user.is_authenticated %}
+        <li class="check"><a href="/mybooking">예약조회</a></li>
+        <li class="logout"><a href="/accounts/logout">logout</a></li>
+      </ul>
+    </div>
+        {% else %}
+        <li class="login"><a href="/accounts/login">login</a></li>
+        <li class="sign_up"><a href="/accounts/signup">sign up</a></li>
+        {% endif %}
       </ul>
     </div>
     <div class="content">
