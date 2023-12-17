@@ -1,6 +1,7 @@
 body {
   background-color: #eff7ff;
   margin: 0;
+  font-weight: bold;
 }
 
 a {
@@ -27,7 +28,7 @@ li {
 }
 
 .logo {
-  margin-right: 85%;
+  margin-right: 80%;
   font-size: large;
   font-weight: bold;
 }
@@ -37,7 +38,7 @@ li {
 }
 
 .logout {
-  margin-left: 10%;
+  margin-left: 8.5%;
 }
 
 .content {

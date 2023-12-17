@@ -1,6 +1,7 @@
 body {
   background-color: #eff7ff;
   margin: 0;
+  font-weight: bold;
 }
 
 .content {
@@ -16,6 +17,7 @@ body {
 a {
   text-decoration: none;
   font-weight: bold;
+  color: black;
 }
 
 li {
@@ -43,5 +45,20 @@ ul {
 }
 
 .logout {
-  margin-left: 5%;
+  margin-left: 4%;
+}
+
+.canclebooking {
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 100px;
+  height: 50px;
+  background-color: #c9e3fc;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.canclebooking:hover {
+  background-color: #b3d8fa;
 }
