@@ -1,1 +1,47 @@
-예약 조회 페이지
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/mybooking.css" />
+    <title>Let's park</title>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="logo"><a href="/"> Let's Park</a></li>
+        {% if user.is_authenticated %}
+        <li class="logout"><a href="/accounts/logout">logout</a></li>
+        {% else %}
+        <li class="login"><a href="/accounts/login">login</a></li>
+        <li class="sign_up"><a href="/accounts/signup">sign up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="content">
+      {% if user.is_booked %}
+      <h3>{{ user.username }}님의 차량번호: {{ user.car_number }}</h3>
+      <br />
+      <h3>{{park_detail.park_name}}</h3>
+      <p>장소: {{park_detail.location}}</p>
+      <p>운영 시간: {{park_detail.operating_time}}</p>
+      <p>요금: {{park_detail.fee}}</p>
+      <p>전화번호: {{park_detail.phone_number}}</p>
+      <form method="POST">
+        {% csrf_token %}
+        <button class="canclebooking" onclick="canclebooking()">
+          예약취소
+        </button>
+      </form>
+
+      {% else %}
+      <p id="text">텅</p>
+      <h3>예약한 주차장이 없습니다.</h3>
+      <h3>
+        <a href="mybooking/" style="color: #1c2ca3d8">예약하러가기🔥</a>
+      </h3>
+      {% endif %}
+    </div>
+  </body>
+</html>
