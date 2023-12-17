@@ -62,3 +62,23 @@ ul {
 .canclebooking:hover {
   background-color: #b3d8fa;
 }
+
+.gotoparkBtn {
+  margin: auto;
+  border: none;
+  border-radius: 15px;
+  width: 10vw;
+  height: 50px;
+  background-color: #c9e3fc;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 19px;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  color: black;
+}
+
+.gotoparkBtn:hover {
+  background-color: #b3d8fa;
+}
