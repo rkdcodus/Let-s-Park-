@@ -13,16 +13,24 @@
         <li class="logo"><a href="/"> Let's Park</a></li>
         {% if user.is_authenticated %}
         <li class="logined">{{ user.user_id }}님, 안녕하세요</li>
-        <li class="logout"><a href="/">logout</a></li>
-        {% else %}
-        <li class="login"><a href="/accounts/login">login</a></li>
-        <li class="sign_up"><a href="/accounts/signup">sign up</a></li>
-        {% endif %}
+        <li class="logout"><a href="/accounts/logout">logout</a></li>
       </ul>
     </div>
     <div class="content">
       <div><a href="park/">search Parking area! 👇</a></div>
-      <div>check my booking! 👀</div>
+      <div><a href="mybooking">check my booking! 👀</a></div>
     </div>
+        {% else %}
+        <li class="login"><a href="/accounts/login">login</a></li>
+        <li class="sign_up"><a href="/accounts/signup">sign up</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div><a href="park/">search Parking area! 👇</a></div>
+    </div>
+        {% endif %}
+      
+  
+   
   </body>
 </html>
