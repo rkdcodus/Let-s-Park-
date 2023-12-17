@@ -29,8 +29,11 @@
       <p>빈자리 현황: {{park_detail.seat_count}}자리</p>
 
       <form method="POST">
-        {% csrf_token %}
+        {% csrf_token %} {% if user.is_booked or user.is_anonymous %}
+        <button class="booking" disabled>예약🔥</button>
+        {% else %}
         <button class="booking" onclick="booking()">예약🔥</button>
+        {% endif %}
       </form>
     </div>
     <script>

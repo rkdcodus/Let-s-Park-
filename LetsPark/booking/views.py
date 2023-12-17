@@ -13,9 +13,15 @@ def park(request):
 
 def booking(request, pk):
     park_detail = get_object_or_404(Park,pk=pk)
-    if request.method == 'POST':
-        park_detail.seat_count -= 1
-        park_detail.save()
+    if request.method == 'POST':        
+        if request.user.is_booked == False:
+            park_detail.seat_count -= 1
+            request.user.is_booked = True
+            request.user.save()
+            park_detail.save()
+        else: 
+            print("예약됨", request.user.is_booked)
+            
         return  HttpResponseRedirect('/park')
     else:
         return render(request, 'booking.html', {'park_detail':park_detail})
