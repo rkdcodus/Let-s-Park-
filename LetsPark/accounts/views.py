@@ -8,8 +8,7 @@ User = get_user_model()
 def signup(request):
     if request.method == 'POST':
         if User.objects.filter(username=request.POST['username']).exists():
-            context['message'] = "아이디가 중복됩니다."
-            return render(request, 'signup.html', context)
+            return render(request, 'signup.html')
         if request.POST['password1'] == request.POST['password2']:
             user = User.objects.create_user(
                                             password=request.POST['password1'],
