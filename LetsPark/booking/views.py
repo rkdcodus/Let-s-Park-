@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404,HttpResponseRedirect
 from .models import Park
+from accounts.models import User
+
 # Create your views here.
 
 def index(request):

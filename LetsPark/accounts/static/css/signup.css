@@ -9,9 +9,9 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #b3d8fa;
+  background-color: #b3d8fa; /*b3d8fa*/
   width: 30vw;
-  height: 78vh;
+  height: 70vh;
   text-align: center;
   border-radius: 20px;
   box-shadow: 3px 3px 3px #4985a6;
