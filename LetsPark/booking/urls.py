@@ -6,6 +6,6 @@ urlpatterns = [
     path("park/", views.park, name="park"),
     path("park/<int:pk>", views.booking, name="booking"),
     path("mybooking/", views.mybooking, name="mybooking"),
-    path("gotopark/", views.gotopark, name="gotopark")
+    path("mybooking/gotopark/", views.gotopark, name="gotopark")
 
 ]
