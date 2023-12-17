@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/booking.css" />
+    <title>Let's park</title>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="logo"><a href="/"> Let's Park</a></li>
+        {% if user.is_authenticated %}
+        <li class="logout"><a href="/accounts/logout">logout</a></li>
+        {% else %}
+        <li class="login"><a href="/accounts/login">login</a></li>
+        <li class="sign_up"><a href="/accounts/signup">sign up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <div class="back">
+      <a href="/park/"
+        ><img src="https://static.thenounproject.com/png/1808051-200.png"
+      /></a>
+    </div>
+
+    <div class="content">
+      <h1>{{park_detail.park_name}}</h1>
+      <p>장소: {{park_detail.location}}</p>
+      <p>운영 시간: {{park_detail.operating_time}}</p>
+      <p>요금: {{park_detail.fee}}</p>
+      <p>전화번호: {{park_detail.phone_number}}</p>
+      <p>빈자리 현황: {{park_detail.seat_count}}자리</p>
+
+      <form method="POST">
+        {% csrf_token %} {% if user.is_booked or user.is_anonymous or not park_detail.can_booked %}
+        <button class="booking" disabled>예약🔥</button>
+        {% else %}
+        <button class="booking" onclick="booking()">예약🔥</button>
+        {% endif %}
+      </form>
+    </div>
+    <script>
+      function booking() {
+        alert("예약되었습니다");
+      }
+    </script>
+  </body>
+</html>

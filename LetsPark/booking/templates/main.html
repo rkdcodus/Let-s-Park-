@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <title>Let's park</title>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="logo"><a href="/"> Let's Park</a></li>
+        {% if user.is_authenticated %}
+        <li class="check"><a href="/mybooking">{{ user.username }}님</a></li>
+        <li class="logout"><a href="/accounts/logout">logout</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div><a href="park/">search Parking area! 👇</a></div>
+      <div><a href="mybooking">check my booking! 👀</a></div>
+    </div>
+        {% else %}
+        <li class="login"><a href="/accounts/login">login</a></li>
+        <li class="sign_up"><a href="/accounts/signup">sign up</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div><a href="park/">search Parking area! 👇</a></div>
+    </div>
+        {% endif %}
+  </body>
+</html>
