@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 
 User = get_user_model()
 
+#회원가입
 def signup(request):
     if request.method == 'POST':
         if User.objects.filter(username=request.POST['username']).exists():
@@ -21,7 +22,8 @@ def signup(request):
             
             return redirect('/')
     return render(request, 'signup.html')
-    
+
+#로그인
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username', None)
@@ -35,9 +37,8 @@ def login(request):
     else:
         return render(request, 'login.html')
 
+#로그아웃
 def logout(request):
     auth.logout(request)
     return redirect('/')
 
-def home(request):
-    return render(request, 'accounts_home.html')
